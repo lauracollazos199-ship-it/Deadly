@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Suelo
+  - PisoFalso
   layers:
   - Default
   - TransparentFX
