@@ -303,12 +303,13 @@ namespace StarterAssets
                 }
 
                 // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                RaycastHit hit;
+                bool haySueloReal = Physics.Raycast(transform.position + Vector3.up * 0.2f, Vector3.down, out hit, 0.5f, GroundLayers);
+
+                if (_input.jump && _jumpTimeoutDelta <= 0.0f && haySueloReal)
                 {
-                    // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-                    // update animator if using character
                     if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDJump, true);

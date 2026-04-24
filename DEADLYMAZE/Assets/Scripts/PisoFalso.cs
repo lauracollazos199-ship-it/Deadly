@@ -2,34 +2,59 @@ using UnityEngine;
 
 public class PisoFalso : MonoBehaviour
 {
-    public Transform jugador;
-    public float rangoHorizontal = 1.0f;
-    public float alturaMaxima = 3.0f;
+    public LayerMask capaJugador;
+
+    private Vector3 tamaño;
+    private BoxCollider col;
 
     bool activado = false;
 
+    void Start()
+    {
+        col = GetComponent<BoxCollider>();
+
+        // Ajusta automáticamente al tamaño del piso
+        tamaño = new Vector3(
+            col.size.x * transform.localScale.x,
+            5f, // altura de detección (ajústalo si saltas más alto)
+            col.size.z * transform.localScale.z
+        );
+    }
+
     void Update()
     {
-        if (jugador == null || activado) return;
+        if (activado) return;
 
-        // Distancia en XZ (horizontal)
-        Vector2 posJugador = new Vector2(jugador.position.x, jugador.position.z);
-        Vector2 posPiso = new Vector2(transform.position.x, transform.position.z);
+        Vector3 centro = transform.position + Vector3.up * (tamaño.y / 2);
 
-        float distancia = Vector2.Distance(posJugador, posPiso);
-
-        // Verificar que esté encima (más alto que el piso)
-        bool estaEncima = jugador.position.y > transform.position.y;
-
-        if (distancia < rangoHorizontal && estaEncima && jugador.position.y - transform.position.y < alturaMaxima)
+        if (Physics.CheckBox(centro, tamaño / 2, Quaternion.identity, capaJugador))
         {
             activado = true;
-            Invoke("Romper", 0.2f);
+            Romper();
         }
     }
 
     void Romper()
     {
         gameObject.SetActive(false);
+
+        // Detectar jugador encima
+        Collider[] hits = Physics.OverlapBox(
+            transform.position + Vector3.up * 1f,
+            new Vector3(tamaño.x / 2, 2f, tamaño.z / 2),
+            Quaternion.identity,
+            capaJugador
+        );
+
+        foreach (Collider col in hits)
+        {
+            CharacterController cc = col.GetComponent<CharacterController>();
+
+            if (cc != null)
+            {
+                // Empujón suave para evitar que se quede pegado
+                cc.Move(Vector3.down * 0.2f);
+            }
+        }
     }
 }
