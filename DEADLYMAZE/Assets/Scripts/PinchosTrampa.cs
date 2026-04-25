@@ -1,45 +1,38 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpikeTrap : MonoBehaviour
+public class PinchosTrampa : MonoBehaviour
 {
     public Transform spikes;
     public Transform downPos;
     public Transform upPos;
 
-    public float speed = 25f;
+    public GameObject killZoneTop;
+    public GameObject killZoneSide;
 
-    public float killHeightOffset = 0.2f; 
-    // 🔥 margen para pies (ajústalo si quieres más o menos dificultad)
+    public float speed = 8f;
 
     private bool activated = false;
-    private bool spikesUp = false;
-
-    private CharacterController player;
 
     void Start()
     {
         spikes.position = downPos.position;
+
+        killZoneTop.SetActive(false);
+        killZoneSide.SetActive(false);
     }
 
-    void OnTriggerEnter(Collider other)
+    public void ActivateTrap()
     {
-        if (activated) return;
-
-        CharacterController cc = other.GetComponentInParent<CharacterController>();
-
-        if (cc != null)
+        if (!activated)
         {
-            player = cc;
             activated = true;
-
             StartCoroutine(RaiseSpikes());
         }
     }
 
     IEnumerator RaiseSpikes()
     {
-        // 🔼 suben una sola vez
         while (Vector3.Distance(spikes.position, upPos.position) > 0.01f)
         {
             spikes.position = Vector3.MoveTowards(
@@ -51,20 +44,7 @@ public class SpikeTrap : MonoBehaviour
             yield return null;
         }
 
-        spikesUp = true;
-    }
-
-    void Update()
-    {
-        if (!spikesUp || player == null) return;
-
-        float spikeTopY = spikes.position.y;
-        float playerBottomY = player.transform.position.y - (player.height * 0.5f);
-
-        if (playerBottomY <= spikeTopY + 0.2f)
-        {
-            Debug.Log("💀 MUERTE");
-            Destroy(player.gameObject);
-        }
+        killZoneTop.SetActive(true);
+        killZoneSide.SetActive(true);
     }
 }
