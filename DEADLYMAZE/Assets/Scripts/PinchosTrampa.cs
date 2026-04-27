@@ -7,16 +7,19 @@ public class PinchosTrampa : MonoBehaviour
     public Transform downPos;
     public Transform upPos;
 
-    public GameObject killZone;
+    public GameObject killZoneTop;
+    public GameObject killZoneSide;
 
-    public float delay = 0.15f;
+    public float speed = 8f;
 
     private bool activated = false;
 
     void Start()
     {
         spikes.position = downPos.position;
-        killZone.SetActive(false);
+
+        killZoneTop.SetActive(false);
+        killZoneSide.SetActive(false);
     }
 
     public void ActivateTrap()
@@ -24,15 +27,24 @@ public class PinchosTrampa : MonoBehaviour
         if (!activated)
         {
             activated = true;
-            StartCoroutine(SpawnTrap());
+            StartCoroutine(RaiseSpikes());
         }
     }
 
-    IEnumerator SpawnTrap()
+    IEnumerator RaiseSpikes()
     {
-        yield return new WaitForSeconds(delay);
+        while (Vector3.Distance(spikes.position, upPos.position) > 0.01f)
+        {
+            spikes.position = Vector3.MoveTowards(
+                spikes.position,
+                upPos.position,
+                speed * Time.deltaTime
+            );
 
-        spikes.position = upPos.position;
-        killZone.SetActive(true);
+            yield return null;
+        }
+
+        killZoneTop.SetActive(true);
+        killZoneSide.SetActive(true);
     }
 }

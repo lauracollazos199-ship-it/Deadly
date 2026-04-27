@@ -7,14 +7,7 @@ public class KillZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+            Debug.Log("MUERTE");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
