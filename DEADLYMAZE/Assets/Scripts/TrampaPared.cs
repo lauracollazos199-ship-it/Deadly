@@ -7,10 +7,10 @@ public class SpikeWallTrap : MonoBehaviour
     public Transform startPos;
     public Transform endPos;
 
-    public float speed = 50f;
+    public float speed = 60f;
 
-    // tamaño del área que mata (ajústalo si hace falta)
-    public Vector3 killBoxSize = new Vector3(1f, 2f, 1f);
+    // tamaño del área de golpe (ajústalo si quieres)
+    public Vector3 hitBoxSize = new Vector3(1.5f, 2f, 1.5f);
 
     private bool activated = false;
 
@@ -32,20 +32,21 @@ public class SpikeWallTrap : MonoBehaviour
 
     IEnumerator MoveWall()
     {
+        Vector3 lastPos = wall.position;
+
         while (Vector3.Distance(wall.position, endPos.position) > 0.01f)
         {
-            // mover pared
+            // mover la pared
             wall.position = Vector3.MoveTowards(
                 wall.position,
                 endPos.position,
                 speed * Time.deltaTime
             );
 
-            // 🔥 detección de muerte (esto reemplaza colisiones)
-            Collider[] hits = Physics.OverlapBox(
-                wall.position,
-                killBoxSize
-            );
+            // 🔥 detección tipo barrido (evita que se escape por esquinas)
+            Vector3 center = (wall.position + lastPos) / 2f;
+
+            Collider[] hits = Physics.OverlapBox(center, hitBoxSize);
 
             foreach (var hit in hits)
             {
@@ -53,10 +54,11 @@ public class SpikeWallTrap : MonoBehaviour
 
                 if (cc != null)
                 {
-                    Debug.Log("💀 APLASTADO");
                     Destroy(cc.gameObject);
                 }
             }
+
+            lastPos = wall.position;
 
             yield return null;
         }
