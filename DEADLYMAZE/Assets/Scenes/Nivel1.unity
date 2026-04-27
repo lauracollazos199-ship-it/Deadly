@@ -2546,10 +2546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 694f21c5dded04b4d99e00a2397ae109, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1423981292}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 694f21c5dded04b4d99e00a2397ae109, type: 3}
       insertIndex: -1
@@ -6113,6 +6110,7 @@ Transform:
   m_Children:
   - {fileID: 858366399}
   - {fileID: 1609820682}
+  - {fileID: 1423981292}
   - {fileID: 1259147}
   - {fileID: 1651242180}
   - {fileID: 1976084539}
@@ -6137,6 +6135,7 @@ MonoBehaviour:
   killZoneTop: {fileID: 1423981291}
   killZoneSide: {fileID: 1609820681}
   speed: 30
+  waitTime: 1.5
 --- !u!1 &1371634315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6611,12 +6610,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423981291}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00015380025, y: -0.00027999884, z: 0.003909998}
-  m_LocalScale: {x: 5, y: 0.5, z: 5}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0.8338, y: -0.29150012, z: -2}
+  m_LocalScale: {x: 102.04082, y: 250, z: 500.00012}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1259147}
+  m_Father: {fileID: 1367101114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1423981293
 MonoBehaviour:
@@ -8325,7 +8324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: Gravity
-      value: -30
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: MoveSpeed
@@ -8333,7 +8332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: JumpHeight
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 974238578668270715, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: FallTimeout
