@@ -19,6 +19,8 @@ public class PinchosTrampa : MonoBehaviour
     {
         spikes.position = downPos.position;
 
+        spikes.GetComponent<Renderer>().enabled = false;
+
         killZoneTop.SetActive(false);
         killZoneSide.SetActive(false);
     }
@@ -28,6 +30,7 @@ public class PinchosTrampa : MonoBehaviour
         if (!activated)
         {
             activated = true;
+            spikes.GetComponent<Renderer>().enabled = true;
             StartCoroutine(TrapRoutine());
         }
     }
@@ -68,6 +71,8 @@ public class PinchosTrampa : MonoBehaviour
         // DESACTIVAR ZONAS DE MUERTE
         killZoneTop.SetActive(false);
         killZoneSide.SetActive(false);
+
+        spikes.GetComponent<Renderer>().enabled = false;
 
         // PERMITIR REACTIVACIÓN
         activated = false;
