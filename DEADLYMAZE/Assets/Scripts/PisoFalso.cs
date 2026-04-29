@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PisoFalso : MonoBehaviour
 {
@@ -56,5 +57,12 @@ public class PisoFalso : MonoBehaviour
                 cc.Move(Vector3.down * 0.2f);
             }
         }
+
+        Invoke("ReiniciarEscena", 1.5f);
+    }
+
+    void ReiniciarEscena()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

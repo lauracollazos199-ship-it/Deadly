@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SpikeWallTrap : MonoBehaviour
+public class TrampaPared : MonoBehaviour
 {
     public Transform wall;
     public Transform startPos;
@@ -17,6 +18,7 @@ public class SpikeWallTrap : MonoBehaviour
     void Start()
     {
         wall.position = startPos.position;
+        wall.GetComponent<Renderer>().enabled = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,6 +28,7 @@ public class SpikeWallTrap : MonoBehaviour
         if (other.GetComponentInParent<CharacterController>() != null)
         {
             activated = true;
+            wall.GetComponent<Renderer>().enabled = true;
             StartCoroutine(MoveWall());
         }
     }
@@ -43,7 +46,7 @@ public class SpikeWallTrap : MonoBehaviour
                 speed * Time.deltaTime
             );
 
-            // 🔥 detección tipo barrido (evita que se escape por esquinas)
+            // detección tipo barrido 
             Vector3 center = (wall.position + lastPos) / 2f;
 
             Collider[] hits = Physics.OverlapBox(center, hitBoxSize);
@@ -54,7 +57,7 @@ public class SpikeWallTrap : MonoBehaviour
 
                 if (cc != null)
                 {
-                    Destroy(cc.gameObject);
+                    Invoke("ReiniciarEscena", 0f);
                 }
             }
 
@@ -65,5 +68,10 @@ public class SpikeWallTrap : MonoBehaviour
 
         // desaparece al final
         wall.gameObject.SetActive(false);
+    }
+
+    void ReiniciarEscena()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
