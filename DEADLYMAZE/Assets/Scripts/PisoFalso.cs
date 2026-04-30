@@ -58,11 +58,6 @@ public class PisoFalso : MonoBehaviour
             }
         }
 
-        Invoke("ReiniciarEscena", 1.5f);
     }
 
-    void ReiniciarEscena()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
