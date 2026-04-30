@@ -53,5 +53,28 @@ public class PinchosTrampa : MonoBehaviour
         killZoneTop.SetActive(true);
         killZoneSide.SetActive(true);
 
+        // ESPERAR ARRIBA
+        yield return new WaitForSeconds(waitTime);
+
+        // BAJAR PINCHOS
+        while (Vector3.Distance(spikes.position, downPos.position) > 0.01f)
+        {
+            spikes.position = Vector3.MoveTowards(
+                spikes.position,
+                downPos.position,
+                speed * Time.deltaTime
+            );
+
+            yield return null;
+        }
+
+        // DESACTIVAR ZONAS DE MUERTE
+        killZoneTop.SetActive(false);
+        killZoneSide.SetActive(false);
+
+        spikes.GetComponent<Renderer>().enabled = false;
+
+        // PERMITIR REACTIVACIÓN
+        activated = false;
     }
 }

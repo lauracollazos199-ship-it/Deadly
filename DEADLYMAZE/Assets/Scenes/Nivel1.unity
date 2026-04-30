@@ -274,7 +274,6 @@ GameObject:
   - component: {fileID: 2069202}
   - component: {fileID: 2069201}
   - component: {fileID: 2069200}
-  - component: {fileID: 2069204}
   m_Layer: 0
   m_Name: Pared (51)
   m_TagString: Untagged
@@ -297,7 +296,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -375,6 +374,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!114 &2069204
 =======
@@ -490,6 +490,8 @@ Canvas:
   m_SortingOrder: 0
   m_TargetDisplay: 0
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f14308e (Nivel1.Nice)
 --- !u!1 &87195561
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,72 +828,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &173826463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 173826465}
-  - component: {fileID: 173826464}
-  - component: {fileID: 173826466}
-  m_Layer: 0
-  m_Name: KillPiso3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &173826464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173826463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75680ff9264a80d4f82d53b8dd1f3bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KillPiso
---- !u!4 &173826465
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173826463}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19, y: -2.5, z: 36.3}
-  m_LocalScale: {x: 8, y: 1, z: 10.6}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &173826466
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173826463}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &193179399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,7 +3126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 694f21c5dded04b4d99e00a2397ae109, type: 3}
       propertyPath: m_LocalScale.y
-      value: 500
+      value: 499.99982
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 694f21c5dded04b4d99e00a2397ae109, type: 3}
       propertyPath: m_LocalScale.z
@@ -6811,72 +6747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1157426373}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!1 &1325657640
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1325657642}
-  - component: {fileID: 1325657641}
-  - component: {fileID: 1325657643}
-  m_Layer: 0
-  m_Name: KillPiso
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1325657641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325657640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75680ff9264a80d4f82d53b8dd1f3bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KillPiso
---- !u!4 &1325657642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325657640}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19, y: -2.5, z: 36.3}
-  m_LocalScale: {x: 8, y: 1, z: 10.6}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1325657643
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325657640}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1331797216
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,12 +7022,11 @@ Transform:
   m_LocalScale: {x: 49, y: 20, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1259147}
-  - {fileID: 1976084539}
   - {fileID: 1651242180}
+  - {fileID: 1976084539}
+  - {fileID: 1259147}
   - {fileID: 858366399}
   - {fileID: 1423981292}
-  - {fileID: 1609820682}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1367101115
@@ -7758,7 +7627,7 @@ Transform:
   m_GameObject: {fileID: 1423981291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8369388, y: -0.917, z: -2.0650005}
+  m_LocalPosition: {x: -0.8369388, y: -0.93549997, z: -2.0650005}
   m_LocalScale: {x: 12.244898, y: 500, z: 1125}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8800,17 +8669,21 @@ Transform:
   m_GameObject: {fileID: 1609820681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8265306, y: -0.5145001, z: -2.1350002}
-  m_LocalScale: {x: 18.367346, y: 150, z: 3750}
+  m_LocalPosition: {x: -17, y: 0.70999813, z: 44.73}
+  m_LocalScale: {x: 900, y: 3000, z: 7500}
   m_ConstrainProportionsScale: 0
 <<<<<<< Updated upstream
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 1367101114}
 =======
   m_Children:
   - {fileID: 9847383}
   m_Father: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+  m_Father: {fileID: 0}
+>>>>>>> parent of f14308e (Nivel1.Nice)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609820683
 MonoBehaviour:
@@ -8841,7 +8714,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.006, y: 0.0012, z: 0.0008}
   m_Center: {x: 0, y: 0.0007, z: 0}
@@ -8997,7 +8870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651242179}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8468, y: -0.682, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9621,23 +9494,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119775930974504096, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: -24.3
 =======
       value: -40.5
 >>>>>>> Stashed changes
+=======
+      value: -33.9
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 2119775930974504096, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.41
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 2119775930974504096, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 44.72
 =======
       value: -43.9
 >>>>>>> Stashed changes
+=======
+      value: -1
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 2119775930974504096, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9761,15 +9642,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 0.0035032544
+=======
+      value: 0.009499141
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45375848
+      value: 0.46874738
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -0.31714302
 =======
       value: 0.004899161
@@ -9782,6 +9668,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.4428569
 >>>>>>> Stashed changes
+=======
+      value: -0.8571425
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644825, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -9865,15 +9754,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542111180780342647, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       value: 0.0035032544
+=======
+      value: 0.009499141
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 5542111180780342647, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45375848
+      value: 0.46874738
       objectReference: {fileID: 0}
     - target: {fileID: 5542111180780342647, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -0.31714302
 =======
       value: 0.004899161
@@ -9886,6 +9780,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.4428569
 >>>>>>> Stashed changes
+=======
+      value: -0.8571425
+>>>>>>> parent of f14308e (Nivel1.Nice)
       objectReference: {fileID: 0}
     - target: {fileID: 5586559825752430727, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_Layer
@@ -10836,8 +10733,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976084538}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8468, y: -0.5310001, z: -2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8468, y: -0.531, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11444,6 +11341,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &2130177472
 =======
@@ -11642,6 +11540,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 2115382407}
   m_CullTransparentMesh: 1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of f14308e (Nivel1.Nice)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -11651,9 +11551,6 @@ SceneRoots:
   - {fileID: 1649555433}
   - {fileID: 702840318}
   - {fileID: 2095254445}
-  - {fileID: 1325657642}
-  - {fileID: 2130177474}
-  - {fileID: 173826465}
   - {fileID: 1810151543}
   - {fileID: 823878012}
   - {fileID: 545400285}
@@ -11720,10 +11617,15 @@ SceneRoots:
   - {fileID: 1157426373}
   - {fileID: 498608369}
   - {fileID: 1773153202}
+  - {fileID: 1609820682}
   - {fileID: 1367101114}
+<<<<<<< HEAD
   - {fileID: 1813797106}
 <<<<<<< Updated upstream
 =======
   - {fileID: 1059454197}
   - {fileID: 1406597210}
 >>>>>>> Stashed changes
+=======
+  - {fileID: 1813797106}
+>>>>>>> parent of f14308e (Nivel1.Nice)
