@@ -1,18 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ParedSiguienteNivel : MonoBehaviour
 {
+    public GameObject panelFinal;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<CharacterController>() != null)
         {
-            int siguiente = SceneManager.GetActiveScene().buildIndex + 1;
+            panelFinal.SetActive(true);
 
-            if (siguiente < SceneManager.sceneCountInBuildSettings)
-            {
-                SceneManager.LoadScene(siguiente);
-            }
+            Time.timeScale = 0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
