@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KillZone : MonoBehaviour
+public class KillPiso : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
@@ -11,3 +11,4 @@ public class KillZone : MonoBehaviour
         }
     }
 }
+
