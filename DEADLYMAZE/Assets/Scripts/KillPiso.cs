@@ -7,7 +7,7 @@ public class KillPiso : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerRespawn.instance.KillPlayer(other.gameObject);
         }
     }
 }

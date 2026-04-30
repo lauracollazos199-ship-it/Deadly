@@ -22,7 +22,7 @@ public class KillZone : MonoBehaviour
         // 🔥 detección real aunque Unity falle
         if (myCol.bounds.Intersects(other.bounds))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerRespawn.instance.KillPlayer(other.gameObject);
         }
     }
 }

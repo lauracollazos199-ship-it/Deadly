@@ -57,7 +57,7 @@ public class TrampaPared : MonoBehaviour
 
                 if (cc != null)
                 {
-                    Invoke("ReiniciarEscena", 0f);
+                    PlayerRespawn.instance.KillPlayer(cc.gameObject);
                 }
             }
 
@@ -68,10 +68,5 @@ public class TrampaPared : MonoBehaviour
 
         // desaparece al final
         wall.gameObject.SetActive(false);
-    }
-
-    void ReiniciarEscena()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

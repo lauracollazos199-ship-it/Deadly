@@ -35,7 +35,7 @@ public class SierraMovimiento : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerRespawn.instance.KillPlayer(other.gameObject);
         }
     }
 }
