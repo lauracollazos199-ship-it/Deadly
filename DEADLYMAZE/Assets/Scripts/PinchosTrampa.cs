@@ -11,7 +11,6 @@ public class PinchosTrampa : MonoBehaviour
     public GameObject killZoneSide;
 
     public float speed = 8f;
-    public float waitTime = 1.5f;
 
     private bool activated = false;
 
@@ -37,7 +36,7 @@ public class PinchosTrampa : MonoBehaviour
 
     IEnumerator TrapRoutine()
     {
-        // SUBIR PINCHOS
+        // SUBIR
         while (Vector3.Distance(spikes.position, upPos.position) > 0.01f)
         {
             spikes.position = Vector3.MoveTowards(
@@ -49,32 +48,10 @@ public class PinchosTrampa : MonoBehaviour
             yield return null;
         }
 
-        // ACTIVAR ZONAS DE MUERTE
+        // ACTIVAR MUERTE
         killZoneTop.SetActive(true);
         killZoneSide.SetActive(true);
 
-        // ESPERAR ARRIBA
-        yield return new WaitForSeconds(waitTime);
-
-        // BAJAR PINCHOS
-        while (Vector3.Distance(spikes.position, downPos.position) > 0.01f)
-        {
-            spikes.position = Vector3.MoveTowards(
-                spikes.position,
-                downPos.position,
-                speed * Time.deltaTime
-            );
-
-            yield return null;
-        }
-
-        // DESACTIVAR ZONAS DE MUERTE
-        killZoneTop.SetActive(false);
-        killZoneSide.SetActive(false);
-
-        spikes.GetComponent<Renderer>().enabled = false;
-
-        // PERMITIR REACTIVACIÓN
-        activated = false;
+        // 🔥 SE QUEDAN ARRIBA PARA SIEMPRE
     }
 }
