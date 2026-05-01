@@ -5,6 +5,9 @@ public class BotonMenuPrincipal : MonoBehaviour
 {
     public void VolverAlInicio()
     {
-        SceneManager.LoadScene("MenuPrincipal"); // nombre EXACTO de tu escena inicial
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("MenuPrincipal"); // tu escena inicial
     }
 }
