@@ -69,4 +69,15 @@ public class TrampaPared : MonoBehaviour
         // desaparece al final
         wall.gameObject.SetActive(false);
     }
+
+    public void ResetTrap()
+    {
+        StopAllCoroutines();
+
+        activated = false;
+
+        wall.gameObject.SetActive(true);
+        wall.position = startPos.position;
+        wall.GetComponent<Renderer>().enabled = false;
+    }
 }

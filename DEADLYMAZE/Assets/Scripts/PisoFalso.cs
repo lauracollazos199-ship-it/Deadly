@@ -60,4 +60,10 @@ public class PisoFalso : MonoBehaviour
 
     }
 
+    public void ResetTrap()
+    {
+        activado = false;
+        gameObject.SetActive(true);
+    }
+
 }
